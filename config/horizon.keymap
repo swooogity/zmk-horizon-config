@@ -16,20 +16,37 @@
 
 / {
 
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+            };
+         };
+    combos {
+        compatible = "zmk,combos";
+        combo_layer {
+            timeout-ms = <50>;
+            key-positions = <38 39>;
+            bindings = <&mo 3>;
+            };
+         };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             // -----------------------------------------------------------------------------------------------------------------
-            // |   `   |   Q   |   W   |   E   |   R   |   T   |---------------|   Y   |   U   |   I   |   O   |   P   |   -   |
-            // |   =   |   A   |   S   |   D   |   F   |   G   |---------------|   H   |   J   |   K   |   L   |   ;   |   '   |
-            // | LSHFT |   Z   |   X   |   C   |   V   |   B   |  ESC  | ENTER |   N   |   M   |   ,   |   .   |   /   | RSHFT |
-            // | LCTRL | LALT  | LGUI  | K_APP |  DEL  |  TAB  |  SYM  |  FUN  | SPACE | BSPC  | K_APP | RGUI  | RALT  | RCTRL |
+            // | `ESC  | Q,ESC |   W   |   E   |   R   |   T   |---------------|   Y   |   U   |   I   |   O   |   P   |   -   |
+            // |  TAB  |   A   |   S   |   D   |   F   |   G   |---------------|   H   |   J   |   K   |   L   |   ;   |   '   |
+            // | LSHFT |   Z   |   X   |   C   |   V   |   B   |       |       |   N   |   M   |   ,   |   .   |   /   | RSHFT |
+            // | LCTRL | LALT  | LGUI  | K_APP |  TAB  |SPC/LWR|       |       |BSP/RSE|  DEL  | K_APP | RGUI  | RALT  | RCTRL |
             bindings = <
-                &kp GRAVE &kp Q    &kp W    &kp E     &kp R   &kp T                     &kp Y     &kp U    &kp I     &kp O    &kp P     &kp MINUS
-                &kp EQUAL &kp A    &kp S    &kp D     &kp F   &kp G                     &kp H     &kp J    &kp K     &kp L    &kp SEMI  &kp SQT
-                &kp LSHFT &kp Z    &kp X    &kp C     &kp V   &kp B   &kp ESC &kp ENTER &kp N     &kp M    &kp COMMA &kp DOT  &kp SLASH &kp RSHFT
-                &kp LCTRL &kp LALT &kp LGUI &kp K_APP &kp DEL &kp TAB &mo SYM &mo FUN   &kp SPACE &kp BSPC &kp K_APP &kp RGUI &kp RALT  &kp RCTRL
+                &kp GRAVE &kp Q    &kp W    &kp E     &kp R   &kp T                          &kp Y      &kp U     &kp I     &kp O    &kp P     &kp MINUS
+                &kp TAB   &kp A    &kp S    &kp D     &kp F   &kp G                          &kp H      &kp J     &kp K     &kp L    &kp SEMI  &kp SQT
+                &kp LSHFT &kp Z    &kp X    &kp C     &kp V   &kp B        &trans &trans     &kp N      &kp M     &kp COMMA &kp DOT  &kp SLASH &kp RSHFT
+                &kp LCTRL &kp LALT &kp LGUI &kp K_APP &kp TAB &lt 1 SPACE  &trans &trans     &lt 2 BSPC &kp DEL   &kp K_APP &kp RGUI &kp RALT  &kp RCTRL
             >;
             
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;   // encoders
