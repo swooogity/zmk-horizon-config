@@ -41,19 +41,17 @@
             , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         
-  encoder0: encoder_0 {
-		compatible = "alps,ec11";
-		label = "ENCODER_0";
-		a-gpios = <&pro_micro_a 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		b-gpios = <&pro_micro_a 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		resolution = <4>;
-		btn-row = <2>;
-		btn-col = <7>;
-	};
+left_encoder: encoder_left {
+    compatible = "alps,ec11";
+    label = "LEFT_ENCODER";
+    a-gpios = <PIN_A (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <PIN_B (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    resolution = <4>;
+};
 
-    sensors {
+sensors {
     compatible = "zmk,keymap-sensors";
-    sensors = <&ENCODER_0>;
+    sensors = <&left_encoder>;
 };
 
     default_transform: keymap_transform_0 {
