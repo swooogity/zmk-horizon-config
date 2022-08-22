@@ -39,7 +39,7 @@
             , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         
-  left_encoder0: encoder_0 {
+  encoder0: encoder_0 {
 		compatible = "alps,ec11";
 		label = "ENCODER_0";
 		a-gpios = <&pro_micro_a 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
