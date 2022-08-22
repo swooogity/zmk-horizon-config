@@ -39,13 +39,15 @@
             , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         
-        left_encoder: encoder_mid {
-        compatible = "alps,ec11";
-        label = "MID_ENCODER";
-        a-gpios = <7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <4>; 
-        };
+  left_encoder0: encoder_0 {
+		compatible = "alps,ec11";
+		label = "ENCODER_0";
+		a-gpios = <&pro_micro_a 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&pro_micro_a 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		resolution = <4>;
+		btn-row = <2>;
+		btn-col = <7>;
+	};
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
