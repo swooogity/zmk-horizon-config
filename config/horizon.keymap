@@ -55,12 +55,12 @@
         symbol_layer {
             // -----------------------------------------------------------------------------------------------------------------
             // |   ~   |   1   |   2   |   3   |   4   |   5   |---------------|   6   |   7   |   8   |   9   |   0   |   _   |
-            // |   +   |   !   |   (   |   )   |   $   |   &   |---------------|   |   |   #   |   {   |   }   |   :   |   "   |
+            // |   +   |   !   | LEFT  | DOWN  |  UP   | RIGHT |---------------|   |   |   #   |   {   |   }   |   :   |   "   |
             // |       |   @   |   [   |   ]   |   \   |   %   |       |       |   ^   |   *   |   <   |   >   |   ?   |       |
             // |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
             bindings = <
                 &kp TILDE &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                  &kp N6    &kp N7    &kp N8   &kp N9   &kp N0    &kp UNDER
-                &kp PLUS  &kp EXCL &kp LPAR &kp RPAR &kp DLLR &kp AMPS                &kp PIPE  &kp HASH  &kp LBRC &kp RBRC &kp COLON &kp DQT
+                &kp PLUS  &kp EXCL &kp LEFT &kp DOWN &kp UP   &kp RIGHT                &kp PIPE  &kp HASH  &kp LBRC &kp RBRC &kp COLON &kp DQT
                 &trans    &kp AT   &kp LBKT &kp RBKT &kp BSLH &kp PRCNT &trans &trans &kp CARET &kp ASTRK &kp LT   &kp GT   &kp QMARK &trans
                 &trans    &trans   &trans   &trans   &trans   &trans    &trans &trans &trans    &trans    &trans   &trans   &trans    &trans
             >;
@@ -70,9 +70,9 @@
 
         function_layer {
             // -----------------------------------------------------------------------------------------------------------------
-            // |       |  F1   |  F2   |  F3   |  F4   | PSCRN |---------------| SLCK  | HOME  | PG_DN | PG_UP |  END  |       |
-            // |       |  F5   |  F6   |  F7   |  F8   |  INS  |---------------| CLCK  | LEFT  | DOWN  |  UP   | RIGHT |       |
-            // |       |  F9   |  F10  |  F11  |  F12  |  BT0  |  BT-  |  BT+  | BTCLR | MUTE  | VOL-  | VOL+  | PS/BK |       |
+            // |       |   !   |   @   |   #   |   $   |   %   |---------------|   ^   |   &   |   *   |   (   |   )   |   -   |
+            // |  F11  |  F1   |  F2   |  F3   |  F4   |  F5   |---------------|   -   | LEFT  | DOWN  |  UP   | RIGHT |       |
+            // |  F12  |  F6   |  F7   |  F8   |  F9   |  F10  |  BT-  |  BT+  |   +   | MUTE  | VOL-  | VOL+  | PS/BK |       |
             // |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
             bindings = <
                 &trans &kp F1  &kp F2   &kp F3   &kp F4  &kp PSCRN                          &kp SLCK   &kp HOME   &kp PG_DN    &kp PG_UP    &kp END         &trans
