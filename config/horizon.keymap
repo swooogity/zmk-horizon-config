@@ -12,9 +12,7 @@
 #define SYM 1
 #define FUN 2
 
-&encoder0 {
-    status = "okay";
-};
+&encoder0 { resolution = <2>; };
 
 / {
 
@@ -33,6 +31,8 @@
                 &kp LSHFT &kp Z    &kp X    &kp C     &kp V   &kp B   &kp ESC &kp ENTER &kp N     &kp M    &kp COMMA &kp DOT  &kp SLASH &kp RSHFT
                 &kp LCTRL &kp LALT &kp LGUI &kp K_APP &kp DEL &kp TAB &mo SYM &mo FUN   &kp SPACE &kp BSPC &kp K_APP &kp RGUI &kp RALT  &kp RCTRL
             >;
+            
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;   // encoders
         };
 
         symbol_layer {
@@ -47,6 +47,8 @@
                 &trans    &kp AT   &kp LBKT &kp RBKT &kp BSLH &kp PRCNT &trans &trans &kp CARET &kp ASTRK &kp LT   &kp GT   &kp QMARK &trans
                 &trans    &trans   &trans   &trans   &trans   &trans    &trans &trans &trans    &trans    &trans   &trans   &trans    &trans
             >;
+
+			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;   // encoders
         };
 
         function_layer {
@@ -61,20 +63,6 @@
                 &trans &kp F9  &kp F10  &kp F11  &kp F12 &bt BT_SEL 0 &bt BT_PRV &bt BT_NXT &bt BT_CLR &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp PAUSE_BREAK &trans
                 &trans &trans  &trans   &trans   &trans  &trans       &trans     &trans     &trans     &trans     &trans       &trans       &trans          &trans
             >;
-        };
-        
-        encodermap {
-		compatible = "zmk,encodermap";
-
-		default_layer {
-			bindings = <&C_MUTE>;   // pushbuttons
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;   // encoders
-                };
-
-		symbol_layer {
-			bindings = <&kp HOME>;   // pushbuttons
-			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;   // encoders
-                };
         };
     };
 };
