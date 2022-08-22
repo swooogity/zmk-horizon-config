@@ -12,7 +12,7 @@
 #define SYM 1
 #define FUN 2
 
-&encoder0 { resolution = <2>; };
+&left_encoder { status = "okay"; resolution = <2>; };
 
 / {
 
