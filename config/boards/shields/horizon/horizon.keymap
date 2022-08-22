@@ -59,5 +59,19 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 &trans &trans  &trans   &trans   &trans  &trans       &trans     &trans     &trans     &trans     &trans       &trans       &trans          &trans
             >;
         };
+        
+        encodermap {
+		compatible = "zmk,encodermap";
+
+		default_layer {
+			bindings = <&C_MUTE    &C_BKLT_TOG>;   // pushbuttons
+			sensor-bindings = <&inc_dec_cp C_VOLUME_UP C_VOLUME_DOWN   &inc_dec_cp C_BRI_INC C_BRI_DEC  >;   // encoders
+                };
+
+		symbol_layer {
+			bindings = < &kp M    &kp C>;   // pushbuttons
+			sensor-bindings = <&kp LC(U) &kp LC(D) &kp N &kp LS(N)>;   // encoders
+                };
+        };
     };
 };
