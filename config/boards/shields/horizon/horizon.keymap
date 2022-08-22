@@ -12,9 +12,9 @@
 #define SYM 1
 #define FUN 2
 
-&left_encoder { status = "okay"; };
-&right_encoder { status = "okay"; };
-&bottom_encoder { status = "okay"; resolution = <2>; };
+&encoder0 {
+    status = "okay";
+};
 
 / {
 
