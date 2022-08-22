@@ -12,6 +12,8 @@
 #define SYM 1
 #define FUN 2
 
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+
 / {
     keymap {
         compatible = "zmk,keymap";
